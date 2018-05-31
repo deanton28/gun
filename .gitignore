@@ -1,0 +1,14 @@
+dist/
+node_modules/
+.DS_Store
+Thumbs.db
+.idea
+*.sublime*
+*.log
+*.psd
+*.ai
+*.pdf
+npm-debug.log*
+package-lock.json
+surge
+.main.js

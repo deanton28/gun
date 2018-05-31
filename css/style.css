@@ -1,0 +1,43 @@
+body {
+	background-color: #e6e6fa
+}
+
+.gun__place {
+	border: 1px solid black;
+	position: relative;
+}
+
+.gun__gun-body {
+	background: white;
+	border: 1px solid white;
+}
+
+.gun__gun-barrel {
+	margin: 5px 5px 0px;
+	width: 60px;
+	height: 6px;
+	border: 1px solid black;
+}
+
+.gun__gun-grip {
+	margin: 0px 5px 5px;
+	width: 10px;
+	height: 30px;
+	border: 1px solid black;
+}
+
+.gun__gun-trigger {
+	width: 10px;
+	height: 10px;
+	border: 1px solid black;
+}
+
+.gun__bullet {
+	width: 5px;
+	height: 5px;
+	border: 2px solid black;
+	border-radius: 10px;
+	position: absolute;
+	top: 5px;
+	left: 70px;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "gun",
+  "version": "1.0.0",
+  "description": "regular task",
+  "main": "index.js",
+  "repository": "git@github.com:deanton28/gun.git",
+  "author": "Anton Dev <deanton28@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint js"
+  },
+  "dependencies": {
+    "lint": "^1.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0"
+  }
+}
