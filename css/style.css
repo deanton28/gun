@@ -3,6 +3,7 @@ body {
 }
 
 .gun__place {
+	margin: 0px;
 	border: 1px solid black;
 	position: relative;
 }
@@ -10,6 +11,7 @@ body {
 .gun__gun-body {
 	background: white;
 	border: 1px solid white;
+	position: relative;
 }
 
 .gun__gun-barrel {
@@ -20,7 +22,7 @@ body {
 }
 
 .gun__gun-grip {
-	margin: 0px 5px 5px;
+	margin: -1px 7px 5px;
 	width: 10px;
 	height: 30px;
 	border: 1px solid black;
@@ -30,6 +32,9 @@ body {
 	width: 10px;
 	height: 10px;
 	border: 1px solid black;
+	position: absolute;
+	top: 12px;
+	left: 18px;
 }
 
 .gun__bullet {
@@ -40,4 +45,28 @@ body {
 	position: absolute;
 	top: 5px;
 	left: 70px;
+}
+
+.gun__bullet-end {
+	margin-top: -10px;
+	height: 20px;
+	border-radius: 10px;
+	background: rgba(56, 57, 61, 0.4);
+	position: absolute;
+  top: 50%;
+	left: 30px;
+}
+
+.bullet-end__text {
+	margin: 0px;
+	padding: 0px 5px;
+}
+
+.gun__target {
+	background: black;
+	width: 5px;
+	height: 11px;
+	position: absolute;
+	top: 3px;
+	left: 500px;
 }
