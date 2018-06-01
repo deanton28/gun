@@ -1,26 +1,29 @@
-const gamePlase = document.querySelector('.gun__place');
-const gun = gamePlase.querySelector('.gun__gun-body');
+const space = 32;
+const shift = 16;
 
-const displayBullet = () => {
-  const bullet = document.createElement('div');
-  const shift = 10;
+const gamePlace = document.querySelector('.gun__place');
+const endBullet = gamePlace.querySelector('.gun__bullet-end');
+const bulletClipFull = 10;
 
-  const moveBullet = () => {
-    const bulletShift = bullet.offsetLeft + shift;
-    if (bulletShift < 500) {
-      bullet.style.left = `${bulletShift}px`;
-      setTimeout(moveBullet, 50);
-    } else {
-      gamePlase.removeChild(bullet);
-    }
-  };
+let bulletClip = bulletClipFull;
 
-  bullet.className = 'gun__bullet';
-  gamePlase.appendChild(bullet);
-
-  setTimeout(moveBullet, 50);
+const reload = (evt) => {
+  if (evt.keyCode === shift || evt.keyCode === undefined) {
+    bulletClip = bulletClipFull;
+    endBullet.setAttribute('hidden', '');
+  }
+  document.removeEventListener('keydown', reload);
 };
 
-gun.addEventListener('click', () => {
-  displayBullet();
+document.addEventListener('keydown', (evt) => {
+  if (evt.keyCode === space) {
+    if (bulletClip !== 0) {
+      window.object.displayObject(gamePlace);
+      bulletClip -= 1;
+    } else {
+      endBullet.removeAttribute('hidden');
+    }
+    document.addEventListener('keydown', reload);
+    endBullet.addEventListener('click', reload);
+  }
 });

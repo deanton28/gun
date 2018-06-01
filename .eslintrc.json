@@ -6,7 +6,7 @@
     "rules": {
       "no-param-reassign": ["error", {
         "props": true,
-        "ignorePropertyModificationsFor": ["exports"]
+        "ignorePropertyModificationsFor": ["exports", "object"]
       }],
       "strict": ["error", "global"]
     }
