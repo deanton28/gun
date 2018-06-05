@@ -2,14 +2,29 @@ body {
 	background-color: #e6e6fa
 }
 
+h3 {
+	margin: 1px;
+}
+
+p {
+	margin: 1px;
+}
+
+.gun__setup {
+	margin: 0px 0px 5px;
+	padding: 0px 0px 5px;
+	background: rgb(52, 192, 196);
+}
+
 .gun__place {
+	background: white;
 	margin: 0px;
 	border: 1px solid black;
 	position: relative;
 }
 
 .gun__gun-body {
-	background: white;
+	margin-top: 15px;
 	border: 1px solid white;
 	position: relative;
 }
@@ -21,20 +36,22 @@ body {
 	border: 1px solid black;
 }
 
-.gun__gun-grip {
+.gun__grip-trigger {
+	display: flex;
 	margin: -1px 7px 5px;
+}
+
+.grip-trigger__grip {
 	width: 10px;
 	height: 30px;
 	border: 1px solid black;
 }
 
-.gun__gun-trigger {
+.grip-trigger__trigger {
+	margin-left: -1px;
 	width: 10px;
 	height: 10px;
 	border: 1px solid black;
-	position: absolute;
-	top: 12px;
-	left: 18px;
 }
 
 .gun__bullet {
@@ -69,4 +86,10 @@ body {
 	position: absolute;
 	top: 3px;
 	left: 500px;
+}
+
+.gun__info {
+	position: absolute;
+	top: 3px;
+	left: 600px;
 }
