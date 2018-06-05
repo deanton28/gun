@@ -1,30 +1,43 @@
-const space = 32;
-const shift = 16;
+window.gun = {};
 
-const gamePlace = document.querySelector('.gun__place');
-const endBullet = gamePlace.querySelector('.gun__bullet-end');
-const bulletClipFull = 10;
+(function play(exports) {
+  const space = 32;
+  const shift = 16;
 
-let bulletClip = bulletClipFull;
+  const gamePlace = document.querySelector('.gun__place');
+  const target = gamePlace.querySelector('.gun__target');
+  const gun = gamePlace.querySelector('.gun__gun-body');
+  const endBullet = gamePlace.querySelector('.gun__bullet-end');
+  const info = document.querySelector('.gun__info');
+  const bulletTotal = info.querySelector('.info__bullet-total');
+  const verticalShift = 2;
 
-const reload = (evt) => {
-  if (evt.keyCode === shift || typeof evt.keyCode === 'undefined') {
-    bulletClip = bulletClipFull;
-    endBullet.setAttribute('hidden', '');
-    document.removeEventListener('keydown', reload);
-  }
-};
+  exports.bulletClipFull = window.setting.sizeBulletClip.value;
 
-document.addEventListener('keydown', (evt) => {
-  if (evt.keyCode === space) {
-    if (bulletClip !== 0) {
-      window.object.displayObject(gamePlace);
-      bulletClip -= 1;
-    } else {
-      endBullet.removeAttribute('hidden');
+  let bulletClip = exports.bulletClipFull;
+
+  const reload = (evt) => {
+    if (evt.keyCode === shift || typeof evt.keyCode === 'undefined') {
+      bulletClip = exports.bulletClipFull;
+      bulletTotal.textContent = `Патронов осталось: ${bulletClip}`;
+      endBullet.setAttribute('hidden', '');
+      document.removeEventListener('keydown', reload);
     }
-    console.log(bulletClip);
-    document.addEventListener('keydown', reload);
-    endBullet.addEventListener('click', reload);
-  }
-});
+  };
+
+  window.object.moveObjectUpDown(target, verticalShift);
+
+  document.addEventListener('keydown', (evt) => {
+    if (evt.keyCode === space) {
+      if (bulletClip !== 0) {
+        window.object.displayObject(gun);
+        bulletClip -= 1;
+      } else {
+        endBullet.removeAttribute('hidden');
+      }
+      bulletTotal.textContent = `Патронов осталось: ${bulletClip}`;
+      document.addEventListener('keydown', reload);
+      endBullet.addEventListener('click', reload);
+    }
+  });
+}(window.gun));

@@ -1,15 +1,30 @@
 window.object = {};
 
 (function showObject(exports) {
-  const moveObject = (object, place) => {
-    const shift = 10;
-    const objectShift = object.offsetLeft + shift;
-    if (objectShift < 500) {
+  const moveObjectHorizontal = (object, place) => {
+    const horizontalShift = 10;
+    const objectShift = object.offsetLeft + horizontalShift;
+
+    if (objectShift < 550) {
       object.style.left = `${objectShift}px`;
-      setTimeout(moveObject, 50, object, place);
+      setTimeout(moveObjectHorizontal, window.setting.speedBullet.value, object, place);
     } else {
       place.removeChild(object);
     }
+  };
+
+  exports.moveObjectUpDown = (object, verticalShift) => {
+    let shift = verticalShift;
+
+    const moveObjectVertical = () => {
+      if (object.offsetTop < 3 || object.offsetTop > 38) {
+        shift = -shift;
+      }
+      object.style.top = `${object.offsetTop + shift}px`;
+      setTimeout(moveObjectVertical, window.setting.speedTarget.value, object, verticalShift);
+    };
+
+    moveObjectVertical();
   };
 
   exports.displayObject = (place) => {
@@ -17,7 +32,6 @@ window.object = {};
 
     object.className = 'gun__bullet';
     place.appendChild(object);
-
-    setTimeout(moveObject, 50, object, place);
+    moveObjectHorizontal(object, place);
   };
 }(window.object));

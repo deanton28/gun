@@ -11,27 +11,59 @@
 		<div class="gun">
 
 			<h2>Поиграем в пистолетик</h2>
+
+			<div class="gun__setup setup">
+				<h3>Настройка</h3>
+				<label for="bullet-quantity">Количество патронов</label>
+				<select class="setup__bullet-quantity" id="bullet-quantity" tabindex="1">
+					<option value="5">5</option>
+					<option value="10" selected>10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+				<select>
+
+        <label for="bullet-speed">Скорость патронов</label>
+				<select class="setup__bullet-speed" id="bullet-speed" tabindex="2">
+					<option value="80">Медленно</option>
+					<option value="50" selected>Средне</option>
+					<option value="20">Быстро</option>
+				</select>
+
+				<label for="target-speed">Скорость мишени</label>
+				<select class="setup__target-speed" id="target-speed" tabindex="3">
+					<option value="80">Медленно</option>
+					<option value="50" selected>Средне</option>
+					<option value="20">Быстро</option>
+				</select>
+			</div>
+
 			<p>Стрельба - space, перезарядка - shift или click.</p>
 
 			<div class="gun__place">
 				<div class="gun__gun-body">
 					<div class="gun__gun-barrel">
 					</div>
-					<div class="gun__gun-grip">
-					</div>
-					<div class="gun__gun-trigger">
-					</div>
+					<div class="gun__grip-trigger grip-trigger">
+						<div class="grip-trigger__grip">
+						</div>
+						<div class="grip-trigger__trigger">
+						</div>
+				</div>
 				</div>
 				<div class="gun__bullet-end bullet-end" hidden>
 					<p class="bullet-end__text">Пульки закончились, перезарядить!</p>
 				</div>
 				<div class="gun__target">
 				</div>
+				<div class="gun__info info">
+					<p class="info__bullet-total">Патронов осталось: 10</p>
+				</div>
 			</div>
 
 		</div>
 
-    <script src="js/show-object.js"></script>
+		<script src="js/show-object.js"></script>
+		<script src="js/setting.js"></script>
 		<script src="js/gun.js"></script>
 
 	</body>
