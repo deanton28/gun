@@ -13,27 +13,28 @@ p {
 .gun__setup {
 	margin: 0px 0px 5px;
 	padding: 0px 0px 5px;
-	background: rgb(52, 192, 196);
+	background: #34c0c4;
 }
 
 .gun__place {
 	background: white;
 	margin: 0px;
-	border: 1px solid black;
+	border: 1px solid #000;
+	height: 200px;
 	position: relative;
 }
 
 .gun__gun-body {
-	margin-top: 15px;
-	border: 1px solid white;
-	position: relative;
+	border: 1px solid #fff;
+	position: absolute;
+	top: 75px;
 }
 
 .gun__gun-barrel {
 	margin: 5px 5px 0px;
 	width: 60px;
 	height: 6px;
-	border: 1px solid black;
+	border: 1px solid #000;
 }
 
 .gun__grip-trigger {
@@ -44,27 +45,42 @@ p {
 .grip-trigger__grip {
 	width: 10px;
 	height: 30px;
-	border: 1px solid black;
+	border: 1px solid #000;
 }
 
 .grip-trigger__trigger {
 	margin-left: -1px;
 	width: 10px;
 	height: 10px;
-	border: 1px solid black;
+	border: 1px solid #000;
 }
 
 .gun__bullet {
 	width: 5px;
 	height: 5px;
-	border: 2px solid black;
+	border: 2px solid #000;
 	border-radius: 10px;
 	position: absolute;
-	top: 5px;
+	/* top: 5px; */
 	left: 70px;
 }
 
-.gun__bullet-end {
+.gun__target {
+	background: #000;
+	width: 5px;
+	height: 11px;
+	position: absolute;
+	top: 5px;
+	left: 350px;
+}
+
+.gun__info {
+	position: absolute;
+	top: 3px;
+	left: 600px;
+}
+
+.message__bullet-end {
 	margin-top: -10px;
 	height: 20px;
 	border-radius: 10px;
@@ -74,22 +90,17 @@ p {
 	left: 30px;
 }
 
-.bullet-end__text {
+.message__hit {
+	margin-top: -10px;
+	height: 20px;
+	border-radius: 10px;
+	background: rgba(241, 64, 17, 0.4);
+	position: absolute;
+  top: 50%;
+	left: 30px;
+}
+
+.message-text {
 	margin: 0px;
-	padding: 0px 5px;
-}
-
-.gun__target {
-	background: black;
-	width: 5px;
-	height: 11px;
-	position: absolute;
-	top: 3px;
-	left: 500px;
-}
-
-.gun__info {
-	position: absolute;
-	top: 3px;
-	left: 600px;
+	padding: 0px 10px;
 }

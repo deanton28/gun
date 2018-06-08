@@ -24,9 +24,9 @@
 
         <label for="bullet-speed">Скорость патронов</label>
 				<select class="setup__bullet-speed" id="bullet-speed" tabindex="2">
-					<option value="80">Медленно</option>
-					<option value="50" selected>Средне</option>
-					<option value="20">Быстро</option>
+					<option value="22">Медленно</option>
+					<option value="12" selected>Средне</option>
+					<option value="2">Быстро</option>
 				</select>
 
 				<label for="target-speed">Скорость мишени</label>
@@ -35,6 +35,16 @@
 					<option value="50" selected>Средне</option>
 					<option value="20">Быстро</option>
 				</select>
+
+				<label for="target-distance">Расстояние до мишени</label>
+				<select class="setup__target-distance" id="target-distance" tabindex="4">
+					<option value="200">Близко</option>
+					<option value="350" selected>Средне</option>
+					<option value="500">Далеко</option>
+				</select>
+
+				<label for="gun-move">Пистолет можно двигать</label>
+				<input class="setup__gun-move" id="gun-move" type="checkbox">
 			</div>
 
 			<p>Стрельба - space, перезарядка - shift или click.</p>
@@ -50,14 +60,19 @@
 						</div>
 				</div>
 				</div>
-				<div class="gun__bullet-end bullet-end" hidden>
-					<p class="bullet-end__text">Пульки закончились, перезарядить!</p>
-				</div>
 				<div class="gun__target">
 				</div>
 				<div class="gun__info info">
 					<p class="info__bullet-total">Патронов осталось: 10</p>
 				</div>
+				<div class="gun__message message">
+					<div class="message__bullet-end bullet-end" hidden>
+						<p class="bullet-end__message-text message-text">Пульки закончились, перезарядить!</p>
+					</div>
+					<div class="message__hit hit" hidden>
+						<p class="hit__message-text message-text">Попал (начать снова: shift или click)!</p>
+					</div>
+			</div>
 			</div>
 
 		</div>
@@ -65,6 +80,7 @@
 		<script src="js/show-object.js"></script>
 		<script src="js/setting.js"></script>
 		<script src="js/gun.js"></script>
+		<script src="js/move-gun.js"></script>
 
 	</body>
 </html>

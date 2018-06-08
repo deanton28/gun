@@ -10,7 +10,8 @@
     "lint": "eslint js"
   },
   "dependencies": {
-    "lint": "^1.1.2"
+    "lint": "^1.1.2",
+    "npm": "^6.1.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
