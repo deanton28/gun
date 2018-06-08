@@ -1,6 +1,8 @@
 window.object = {};
 
 (function showObject(exports) {
+  const gunWidth = 70;
+  const gunBarrelTopMargin = 5;
   let timerIdTarget = 0;
 
   const moveObjectHorizontal = (object, place) => {
@@ -18,7 +20,12 @@ window.object = {};
     const targetRight = targetLeft + getElementSize(window.gun.target, 'width');
     const targetBottom = targetTop + getElementSize(window.gun.target, 'height');
 
-    if (objectRight > targetLeft && objectRight < targetRight && objectBottom > targetTop && objectTop < targetBottom) {
+    if (
+      objectRight > targetLeft &&
+      objectRight < targetRight &&
+      objectBottom > targetTop &&
+      objectTop < targetBottom
+    ) {
       window.gun.messageHitTarget.removeAttribute('hidden');
       window.gun.target.setAttribute('hidden', '');
       window.gun.messageHitTarget.addEventListener('click', window.gun.restart);
@@ -39,7 +46,7 @@ window.object = {};
     const moveObjectVertical = () => {
       const timeout = window.setting.speedTarget.value;
 
-      if (object.offsetTop < 3 || object.offsetTop > 38) {
+      if (object.offsetTop < 5 || object.offsetTop > 185) {
         shift = -shift;
       }
       object.style.top = `${object.offsetTop + shift}px`;
@@ -53,7 +60,10 @@ window.object = {};
     const object = document.createElement('div');
 
     object.className = 'gun__bullet';
+    object.style.top = `${window.move.gun.offsetTop + gunBarrelTopMargin}px`;
+    object.style.left = `${window.move.gun.offsetLeft + gunWidth}px`;
     place.appendChild(object);
+
     moveObjectHorizontal(object, place);
   };
 }(window.object));

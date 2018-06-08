@@ -3,6 +3,7 @@ window.setting = {};
 (function tune(exports) {
   const setup = document.querySelector('.gun__setup');
   const distanceTarget = setup.querySelector('#target-distance');
+  const gunMove = setup.querySelector('#gun-move');
 
   exports.speedTarget = setup.querySelector('#target-speed');
   exports.sizeBulletClip = setup.querySelector('#bullet-quantity');
@@ -24,5 +25,14 @@ window.setting = {};
   distanceTarget.addEventListener('change', () => {
     window.gun.target.style.left = `${distanceTarget.value}px`;
     distanceTarget.blur();
+  });
+
+  gunMove.addEventListener('change', () => {
+    if (gunMove.checked) {
+      window.move.gun.addEventListener('mousedown', window.move.onMouseDown);
+    } else {
+      window.move.gun.removeEventListener('mousedown', window.move.onMouseDown);
+    }
+    gunMove.blur();
   });
 }(window.setting));
